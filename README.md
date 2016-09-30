@@ -18,3 +18,4 @@ Hay dos archivos que contienen scripts para ejecutar directamente en una base Mo
 * [Insert alumnos](scripts/Insert alumnos.txt) permite generar un juego de datos con dos cursos de Diseño de Sistemas
 * [Queries alumnos](scripts/Queries Alumnos.txt) resuelve 5 requerimientos (cada uno se explica dentro del mismo archivo). Se puede copiar y pegar en un shell de Mongo uno por uno.
 
+![video](video/demo.gif)
