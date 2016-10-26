@@ -14,7 +14,9 @@ db.alumnos.find({"alumno.parciales.parcial.nota": { "$gt": "3" }}).pretty();
 -- Transformamos la lista de alumnos en uno que contenga el nombre del alumno + la nota del primer parcial
 > var mapPrimerParcial = function() {
                            var nota = this.alumno.parciales[0].parcial.nota;
-                           emit(this.alumno.nombreApellido, nota);
+                           if (nota > 4) {
+                           		emit(this.alumno.nombreApellido, nota);
+                           }
                        };
 
 > var reduceAlumnos = function(nombre, nota) {
@@ -24,5 +26,5 @@ db.alumnos.find({"alumno.parciales.parcial.nota": { "$gt": "3" }}).pretty();
                     
 > db.alumnos.mapReduce(mapPrimerParcial, reduceAlumnos, { out: 'alumnosPrimerParcial' });
 
-> db.alumnosPrimerParcial.find({ value: { '$gt': '4', '$ne': 'Ausente'} });
+> db.alumnosPrimerParcial.find();
 
