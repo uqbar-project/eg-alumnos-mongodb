@@ -27,3 +27,4 @@ Hay dos archivos que contienen scripts para ejecutar directamente en una base Mo
 Te mostramos cómo correr los scripts con [Robomongo](https://robomongo.org/) un cliente MongoDB con algunas prestaciones gráficas:
 
 ![video](video/demo.gif)
+
