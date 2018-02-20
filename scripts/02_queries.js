@@ -1,30 +1,34 @@
--- 1 Alumnos del curso K3053
-> db.alumnos.find({"curso": "K3053"}).pretty();
+// 1 Alumnos del curso K3053
+db.alumnos.find({"curso": "K3053"}).pretty()
 
--- 2 Alumnos cuyo nombre es > "V"
-> db.alumnos.find({"alumno.nombreApellido": { "$gt": "V"}}).pretty();
+// 2 Alumnos cuyo nombre es > "V"
+db.alumnos.find({"alumno.nombreApellido": { "$gt": "V"}}).pretty()
 
--- 3 quiénes aprobaron un parcial
-db.alumnos.find({"alumno.parciales.parcial.nota": { "$gt": "3" }}).pretty();
+// 3 quiénes aprobaron un parcial
+db.alumnos.find({"alumno.parciales.parcial.nota": { "$gt": "3" }}).pretty()
 
--- 4 qué alumnos se llaman Sebastián
-> db.alumnos.find({ "alumno.nombreApellido": /.*Sebastian.*/});
+// 4 qué alumnos se llaman Sebastián
+db.alumnos.find({ "alumno.nombreApellido": /.*Sebastian.*/})
 
--- 5 quiénes aprobaron el primer parcial
--- Transformamos la lista de alumnos en uno que contenga el nombre del alumno + la nota del primer parcial
-> var mapPrimerParcial = function() {
-                           var nota = this.alumno.parciales[0].parcial.nota;
-                           if (nota > 4) {
-                           		emit(this.alumno.nombreApellido, nota);
-                           }
-                       };
+// 5 quiénes aprobaron el primer parcial
+// Transformamos la lista de alumnos en uno que contenga el nombre del alumno + la nota del primer parcial
+let primerParcial = function() {
+    const nota = this.alumno.parciales[0].parcial.nota
+    if (nota > 4) {
+        emit(this.alumno.nombreApellido, nota)
+    }
+}
 
-> var reduceAlumnos = function(nombre, nota) {
-				return { nombre: nombre,
-				         nota: nota};
-                    };
+let resumenAlumnos = function(nombre, nota) {
+    return {
+        nombre: nombre,
+        nota: nota
+    }
+}
                     
-> db.alumnos.mapReduce(mapPrimerParcial, reduceAlumnos, { out: 'alumnosPrimerParcial' });
+db.alumnos.mapReduce(primerParcial, resumenAlumnos, { out: 'alumnosPrimerParcial' })
 
-> db.alumnosPrimerParcial.find();
+// TODO: Lograr que ande con arrow functions
+
+db.alumnosPrimerParcial.find()
 
