@@ -2,10 +2,10 @@
 db.alumnos.find({"curso": "K3053"}).pretty()
 
 // 2 Alumnos cuyo nombre es > "V"
-db.alumnos.find({"alumno.nombreApellido": { "$gt": "V"}}).pretty()
+db.alumnos.find({"alumno.nombreApellido": { "$gt": "V"}})
 
 // 3 quiénes aprobaron un parcial
-db.alumnos.find({"alumno.parciales.parcial.nota": { "$gt": "3" }}).pretty()
+db.alumnos.find({"alumno.parciales.parcial.nota": { "$gt": "3" }})
 
 // 4 qué alumnos se llaman Sebastián
 db.alumnos.find({ "alumno.nombreApellido": /.*Sebastian.*/})
