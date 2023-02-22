@@ -1,5 +1,7 @@
 # Estudiantes de una facultad - Ejemplo puro en MongoDB
 
+[![build-estudiantes](https://github.com/uqbar-project/eg-alumnos-mongodb/actions/workflows/build.yml/badge.svg)](https://github.com/uqbar-project/eg-alumnos-mongodb/actions/workflows/build.yml)
+
 ## Objetivo
 
 Muestra cómo generar una [base de estudiantes que cursan materias de una facultad](https://github.com/uqbar-project/eg-alumnos-mongodb/wiki/Enunciado-Alumnos) en MongoDB.
