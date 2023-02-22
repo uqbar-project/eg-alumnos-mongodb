@@ -1,9 +1,21 @@
-# Alumnos de una facultad - Ejemplo puro en MongoDB
+# Estudiantes de una facultad - Ejemplo puro en MongoDB
 
 ## Objetivo
-muestra cómo generar una [base de alumnos que cursan materias de una facultad](https://github.com/uqbar-project/eg-alumnos-mongodb/wiki/Enunciado-Alumnos) en MongoDB.
+
+Muestra cómo generar una [base de estudiantes que cursan materias de una facultad](https://github.com/uqbar-project/eg-alumnos-mongodb/wiki/Enunciado-Alumnos) en MongoDB.
+
+## Instalación
+
+Para levantar el servicio de MongoDB utilizamos Docker Compose:
+
+```bash
+docker-compose up
+```
+
+Para más detalle, seguí [estos pasos](https://github.com/uqbar-project/eg-viajes-mongodb). Tenés [este archivo para definir la conexión en Studio 3T](./Studio_3T_Connection_URI_Export.uri)
 
 ## Modelo
+
 El modelo de datos se estructura en un documento que contiene: 
 
 * el nombre de la materia, 
@@ -12,19 +24,3 @@ El modelo de datos se estructura en un documento que contiene:
  * su nombre 
  * y los parciales (nota y fecha del examen).
  
-## Instalación
-Tenés que instalar una base de datos [MongoDB Community Edition](https://www.mongodb.com/) y levantar el server. En Windows, [levantan el servicio mongod](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/), en Linux desde una línea de comandos hacen
-
-```bash
-$ sudo service mongod start
-```
-
-Hay dos archivos que contienen scripts para ejecutar directamente en una base MongoDB:
-
-* [Insert alumnos](scripts/01_insert.js) permite generar un juego de datos con dos cursos de Diseño de Sistemas
-* [Queries alumnos](scripts/02_queries.js) resuelve 5 requerimientos (cada uno se explica dentro del mismo archivo). Se puede copiar y pegar en un shell de Mongo uno por uno.
-
-Te mostramos cómo correr los scripts con [Robomongo](https://robomongo.org/) un cliente MongoDB con algunas prestaciones gráficas:
-
-![video](video/demo.gif)
-

@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  mongo:
+    # tomamos la última imagen de mongo
+    image: mongo:latest
+    container_name: mongo_alumnes
+    hostname: host-mongo-alumnes
+
+    # mapeo el puerto de mi computadora 27020 contra el 27017 (importante porque es el default de mongo)
+    ports:
+      - "27020:27017"
+    volumes:
+      - ~/mongo/viajes_db:/data/db
+      - ~/mongo/viajes_log:/var/log/mongodb/
+      - ./Docker/mongo-init.js:/docker-entrypoint-initdb.d/01-mongo-init.js:ro
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: capo
+      MONGO_INITDB_ROOT_PASSWORD: eyra
+      MONGO_INITDB_DATABASE: alumnes

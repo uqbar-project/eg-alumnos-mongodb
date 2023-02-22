@@ -1,0 +1,5 @@
+// Connections Exported from Studio 3T -- https://studio3t.com/
+// Exported on Feb 21, 2023 11:20:54 PM
+
+// estudiantes
+mongodb://capo:eyra@127.0.0.1:27020/admin?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-256&3t.uriVersion=3&3t.connection.name=estudiantes&3t.defaultColor=181,115,162&3t.databases=admin&3t.alwaysShowAuthDB=true&3t.alwaysShowDBFromUserRole=true
