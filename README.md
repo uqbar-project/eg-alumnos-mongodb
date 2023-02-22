@@ -26,3 +26,6 @@ El modelo de datos se estructura en un documento que contiene:
  * su nombre 
  * y los parciales (nota y fecha del examen).
  
+## Scripts
+
+Podés fijarte en la carpeta [scripts](scripts) los queries que podés ejecutar.
