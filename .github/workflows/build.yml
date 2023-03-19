@@ -9,9 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Start MongoDB
-        run: docker-compose -f "docker-compose.yml" up -d --build
+        run: docker compose -f "docker-compose.yml" up -d --build
         
       - name: Stop containers
         if: always()
-        run: docker-compose -f "docker-compose.yml" down
+        run: docker compose -f "docker-compose.yml" down
         

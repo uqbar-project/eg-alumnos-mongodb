@@ -11,7 +11,7 @@ Muestra cómo generar una [base de estudiantes que cursan materias de una facult
 Para levantar el servicio de MongoDB utilizamos Docker Compose:
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 Para más detalle, seguí [estos pasos](https://github.com/uqbar-project/eg-viajes-mongodb). Tenés [este archivo para definir la conexión en Studio 3T](./Studio_3T_Connection_URI_Export.uri)
