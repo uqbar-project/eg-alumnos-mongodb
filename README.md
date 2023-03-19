@@ -8,7 +8,7 @@ Muestra cómo generar una [base de estudiantes que cursan materias de una facult
 
 ## Instalación
 
-Para levantar el servicio de MongoDB utilizamos Docker Compose:
+Solo hace falta tener instalado Docker Desktop (el pack docker engine y docker compose), seguí las instrucciones de [esta página](https://phm.uqbar-project.org/material/software) en el párrafo `Docker`.
 
 ```bash
 docker compose up
