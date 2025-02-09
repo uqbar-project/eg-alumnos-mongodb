@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   mongo:
     # tomamos la última imagen de mongo
@@ -10,8 +9,8 @@ services:
     ports:
       - "27020:27017"
     volumes:
-      - ~/mongo/viajes_db:/data/db
-      - ~/mongo/viajes_log:/var/log/mongodb/
+      - ~/mongo/alumnes_db:/data/db
+      - ~/mongo/alumnes_log:/var/log/mongodb/
       - ./Docker/mongo-init.js:/docker-entrypoint-initdb.d/01-mongo-init.js:ro
     environment:
       MONGO_INITDB_ROOT_USERNAME: capo
